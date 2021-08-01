@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.shape.Line?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="842.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+    <children>
+        <ImageView fx:id="skinType" fitHeight="700.0" fitWidth="858.0" layoutX="-2.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/spacex-skin.jpg" />
+            </image>
+        </ImageView>
+        <GridPane prefHeight="502.0" prefWidth="190.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="5.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                    <children>
+                        <FontIcon iconColor="#b3ccff" iconLiteral="fab-battle-net" iconSize="60" layoutX="21.0" layoutY="76.0" wrappingWidth="37.59994411468506" />
+                        <Label layoutX="97.0" layoutY="44.0" text="Code" textFill="#b3ccff">
+                            <font>
+                                <Font name="Arial" size="17.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="95.0" layoutY="66.0" text="Blue" textFill="#b3ccff">
+                            <font>
+                                <Font name="Arial" size="30.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                    <children>
+                        <FontIcon iconColor="#b3ccff" iconLiteral="fas-wallet" iconSize="25" layoutX="50.0" layoutY="95.0" wrappingWidth="37.59994411468506" />
+                        <Label fx:id="walletLabel" layoutX="95.0" layoutY="74.0" onMouseClicked="#gotoWallet" onMouseEntered="#walletDragOn" onMouseExited="#walletDragOff" text="Wallet" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="17.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Label>
+                        <FontIcon iconColor="#b3ccff" iconLiteral="fas-chart-pie" iconSize="25" layoutX="50.0" layoutY="40.0" wrappingWidth="37.59994411468506" />
+                        <Label fx:id="portfolioLabel" layoutX="95.0" layoutY="19.0" onMouseClicked="#gotoPortfolio" onMouseEntered="#portfolioDragOn" onMouseExited="#portfolioDragOff" text="Portfolio" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="17.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Label>
+                        <Label fx:id="exchangeLabel" layoutX="95.0" layoutY="123.0" onMouseClicked="#gotoExchange" onMouseEntered="#exchangeDragOn" onMouseExited="#exchangeDragOff" text="Exchange" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="17.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Label>
+                        <FontIcon iconColor="#b3ccff" iconLiteral="fas-exchange-alt" iconSize="25" layoutX="50.0" layoutY="144.0" wrappingWidth="34.962890625" />
+                        <Separator layoutX="50.0" layoutY="173.0" prefHeight="1.0" prefWidth="113.0" style="-fx-background-color: #b3ccff;" />
+                    </children>
+                </Pane>
+                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                    <children>
+                        <Label fx:id="settingsLabel" onMouseEntered="#settingsDragOn" onMouseExited="#settingsDragOff" onMouseClicked="#gotoSettings" layoutX="64.0" layoutY="64.0" text="Settings" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="17.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Label>
+                        <Label fx:id="helpLabel" onMouseEntered="#helpDragOn" onMouseExited="#helpDragOff" layoutX="64.0" layoutY="99.0" text="Help" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="17.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </GridPane>
+        <AnchorPane fx:id="sendReceiveBitcoin" layoutX="400.0" layoutY="82.0" prefHeight="161.0" prefWidth="270.0">
+            <children>
+                <JFXButton fx:id="bitcoinReceive" layoutX="155.0" layoutY="118.0" prefHeight="36.0" prefWidth="114.0" style="-fx-border-color: orange; -fx-border-radius: 10;" textFill="WHITE" text="Receive" onMouseClicked="#openbitcoinReceive"/>
+                <JFXButton fx:id="bitcoinSend" layoutY="118.0" prefHeight="36.0" prefWidth="114.0" style="-fx-border-color: orange; -fx-border-radius: 10;" textFill="WHITE" text="Send" onMouseClicked="#openbitcoinSend"/>
+                <FontIcon fx:id="bitcoinChainRefresh" iconColor="#ffa70a" iconLiteral="fab-bitcoin" iconSize="60" layoutX="104.0" layoutY="67.0" onMouseEntered="#refreshbitcoinChain" onMouseExited="#resetbitcoinLogo" wrappingWidth="37.59994411468506" >
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                </FontIcon>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="sendReceiveEthereum" layoutX="400.0" layoutY="82.0" prefHeight="161.0" prefWidth="270.0">
+            <children>
+                <JFXButton fx:id="ethereumReceive" layoutX="155.0" layoutY="118.0" prefHeight="36.0" prefWidth="114.0" style="-fx-border-color: royalblue; -fx-border-radius: 10;" textFill="WHITE" text="Receive" onMouseClicked="#openethereumReceive"/>
+                <JFXButton fx:id="ethereumSend" layoutY="118.0" prefHeight="36.0" prefWidth="114.0" style="-fx-border-color: royalblue; -fx-border-radius: 10;" textFill="WHITE" text="Send" onMouseClicked="#openethereumSend"/>
+                <FontIcon fx:id="ethereumChainRefresh" iconColor="royalblue" iconLiteral="fab-ethereum" iconSize="60" layoutX="104.0" layoutY="67.0" onMouseEntered="#refreshethereumChain" onMouseExited="#resetethereumLogo" wrappingWidth="37.59994411468506" >
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                </FontIcon>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="sendReceiveLitecoin" layoutX="400.0" layoutY="82.0" prefHeight="161.0" prefWidth="270.0">
+            <children>
+                <JFXButton fx:id="litecoinReceive" layoutX="155.0" layoutY="118.0" prefHeight="36.0" prefWidth="114.0" style="-fx-border-color: lightslategray; -fx-border-radius: 10;" textFill="WHITE" text="Receive" onMouseClicked="#openlitecoinReceive"/>
+                <JFXButton fx:id="litecoinSend" layoutY="118.0" prefHeight="36.0" prefWidth="114.0" style="-fx-border-color: lightslategray; -fx-border-radius: 10;" textFill="WHITE" text="Send" onMouseClicked="#openlitecoinSend"/>
+                <FontIcon fx:id="litecoinChainRefresh" iconColor="lightslategray" iconLiteral="fa-refresh" iconSize="60" layoutX="104.0" layoutY="67.0" onMouseEntered="#refreshlitecoinChain" onMouseExited="#resetlitecoinLogo" wrappingWidth="37.59994411468506" />
+                <ImageView fx:id="litecoinLogo" fitHeight="60.0" fitWidth="64.0" layoutX="103.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" onMouseEntered="#refreshlitecoinChain" onMouseExited="#resetlitecoinLogo">
+                    <image>
+                        <Image url="@../images/LTC.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="sendReceiveMonero" layoutX="400.0" layoutY="82.0" prefHeight="161.0" prefWidth="270.0">
+            <children>
+                <JFXButton fx:id="moneroReceive" layoutX="155.0" layoutY="118.0" prefHeight="36.0" prefWidth="114.0" style="-fx-border-color: red; -fx-border-radius: 10;" textFill="WHITE" text="Receive" onMouseClicked="#openmoneroReceive"/>
+                <JFXButton fx:id="moneroSend" layoutY="118.0" prefHeight="36.0" prefWidth="114.0" style="-fx-border-color: red; -fx-border-radius: 10;" textFill="WHITE" text="Send" onMouseClicked="#openmoneroSend"/>
+                <FontIcon fx:id="moneroChainRefresh" iconColor="red" iconLiteral="fab-monero" iconSize="60" layoutX="104.0" layoutY="67.0" onMouseEntered="#refreshmoneroChain" onMouseExited="#resetmoneroLogo" wrappingWidth="37.59994411468506" >
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                </FontIcon>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="portfolioSection" layoutX="200.0" layoutY="82.0" prefHeight="161.0" prefWidth="270.0">
+            <children>
+                <Label layoutX="123.0" layoutY="14.0" text="Current Account Value:" textFill="#b3ccff">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Label>
+                <FontIcon iconColor="orange" iconLiteral="fa-circle-thin" iconSize="300" layoutX="130.0" layoutY="310.0" onMouseEntered="#showusdValue" onMouseExited="#showbitcoinValue" >
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                </FontIcon>
+                <Label fx:id="valueLabel" layoutX="175.0" layoutY="180.0" text="BTC Value: .144 btc" textFill="orange">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="settingsSection" layoutX="265.0" layoutY="57.0" prefHeight="359.0" prefWidth="447.0">
+            <children>
+                <JFXCheckBox fx:id="spacexSkinSet" layoutX="12.0" layoutY="180.0" text="SpaceX Skin" textFill="WHITE" unCheckedColor="WHITE" />
+                <JFXCheckBox fx:id="californiaSkinSet" layoutX="155.0" layoutY="180.0" text="California Skin" textFill="WHITE" unCheckedColor="WHITE" />
+                <JFXCheckBox fx:id="ethereumSkinSet" layoutX="296.0" layoutY="180.0" text="Ethereum Skin" textFill="WHITE" unCheckedColor="WHITE" />
+                <JFXCheckBox layoutX="13.0" layoutY="292.0" text="California Skin" textFill="WHITE" unCheckedColor="WHITE" />
+                <JFXCheckBox layoutX="155.0" layoutY="292.0" text="California Skin" textFill="WHITE" unCheckedColor="WHITE" />
+                <JFXCheckBox layoutX="296.0" layoutY="292.0" text="California Skin" textFill="WHITE" unCheckedColor="WHITE" />
+                <AnchorPane layoutX="14.0" layoutY="95.0" prefHeight="63.0" prefWidth="90.0" style="-fx-border-color: white;">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="false">
+                            <image>
+                                <Image url="@../images/spacex-skin.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="160.0" layoutY="95.0" prefHeight="63.0" prefWidth="70.0" style="-fx-border-color: white;">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="false">
+                            <image>
+                                <Image url="@../images/california-skin.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="298.0" layoutY="95.0" prefHeight="63.0" prefWidth="90.0" style="-fx-border-color: white;">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="false">
+                            <image>
+                                <Image url="@../images/ethereum-skin.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="14.0" layoutY="210.0" prefHeight="63.0" prefWidth="90.0" style="-fx-border-color: white;">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="false">
+                            <image>
+                                <Image url="@../images/ethereum-skin.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="155.0" layoutY="209.0" prefHeight="63.0" prefWidth="90.0" style="-fx-border-color: white;">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="false">
+                            <image>
+                                <Image url="@../images/ethereum-skin.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="298.0" layoutY="209.0" prefHeight="63.0" prefWidth="90.0" style="-fx-border-color: white;">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="false">
+                            <image>
+                                <Image url="@../images/ethereum-skin.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <JFXButton fx:id="saveSkin" onMouseClicked="#saveSettings" layoutX="155.0" layoutY="334.0" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #b3ccff;" text="Save" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="cryptoLabels" layoutX="175.0" layoutY="-1.0" prefHeight="528.0" prefWidth="150.0">
+            <children>
+                <Line endX="-69.20001220703125" endY="430.0" layoutX="204.0" layoutY="97.0" startX="-69.20001220703125" startY="-97.0" stroke="#b3ccff" />
+                <Label fx:id="bitcoinwalletLabel" layoutX="43.0" layoutY="146.0" onMouseClicked="#gotoBitcoinWallet" onMouseEntered="#bitcoinwalletDragOn" onMouseExited="#bitcoinwalletDragOff" text="Bitcoin" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="17.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <Label fx:id="ethereumwalletLabel" layoutX="43.0" layoutY="188.0" onMouseClicked="#gotoEthereumWallet" onMouseEntered="#ethereumwalletDragOn" onMouseExited="#ethereumwalletDragOff" text="Ethereum" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="17.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <Label fx:id="litecoinwalletLabel" layoutX="45.0" layoutY="226.0" onMouseClicked="#gotoLitecoinWallet" onMouseEntered="#litecoinwalletDragOn" onMouseExited="#litecoinwalletDragOff" text="Litecoin" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="17.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <Label fx:id="monerowalletLabel" layoutX="45.0" layoutY="263.0" onMouseClicked="#gotoMoneroWallet" onMouseEntered="#monerowalletDragOn" onMouseExited="#monerowalletDragOff" text="Monero" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="17.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <Line endX="-69.20001220703125" endY="430.0" layoutX="83.0" layoutY="97.0" startX="-69.20001220703125" startY="-97.0" stroke="#b3ccff" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="bitcoinsendPane" layoutX="207.0" layoutY="78.0" prefHeight="374.0" prefWidth="571.0" style="-fx-background-color: black;">
+            <children>
+                <JFXTextArea layoutX="134.0" layoutY="39.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="Send to Bitcoin Address" unFocusColor="ORANGE" />
+                <JFXButton layoutX="232.0" layoutY="169.0" prefHeight="36.0" prefWidth="118.0" style="-fx-border-color: orange;" text="Send" textFill="WHITE" />
+                <JFXTextArea layoutX="134.0" layoutY="94.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="0.00" unFocusColor="ORANGE" />
+                <FontIcon iconColor="#b3ccff" iconLiteral="fas-times" iconSize="30" layoutX="14.0" layoutY="40.0" wrappingWidth="37.59994411468506" onMouseClicked="#closebitcoinSend"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="bitcoinreceivePane" layoutX="207.0" layoutY="78.0" prefHeight="374.0" prefWidth="571.0" style="-fx-background-color: black;">
+            <children>
+                <JFXTextArea layoutX="134.0" layoutY="39.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="Send to Bitcoin Address" unFocusColor="ORANGE" />
+                <JFXButton layoutX="232.0" layoutY="169.0" prefHeight="36.0" prefWidth="118.0" style="-fx-border-color: orange;" text="Send" textFill="WHITE" />
+                <JFXTextArea layoutX="134.0" layoutY="94.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="0.00" unFocusColor="ORANGE" />
+                <FontIcon iconColor="#b3ccff" iconLiteral="fas-times" iconSize="30" layoutX="14.0" layoutY="40.0" wrappingWidth="37.59994411468506" onMouseClicked="#closebitcoinReceive"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="ethereumsendPane" layoutX="207.0" layoutY="78.0" prefHeight="374.0" prefWidth="571.0" style="-fx-background-color: black;">
+            <children>
+                <JFXTextArea layoutX="134.0" layoutY="39.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="Send to Ethereum Address" unFocusColor="royalblue" />
+                <JFXButton layoutX="232.0" layoutY="169.0" prefHeight="36.0" prefWidth="118.0" style="-fx-border-color: royalblue;" text="Send" textFill="WHITE" />
+                <JFXTextArea layoutX="134.0" layoutY="94.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="0.00" unFocusColor="royalblue" />
+                <FontIcon iconColor="#b3ccff" iconLiteral="fas-times" iconSize="30" layoutX="14.0" layoutY="40.0" wrappingWidth="37.59994411468506" onMouseClicked="#closeethereumSend"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="ethereumreceivePane" layoutX="207.0" layoutY="78.0" prefHeight="374.0" prefWidth="571.0" style="-fx-background-color: black;">
+            <children>
+                <JFXTextArea layoutX="134.0" layoutY="39.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="Send to Ethereum Address" unFocusColor="royalblue" />
+                <JFXButton layoutX="232.0" layoutY="169.0" prefHeight="36.0" prefWidth="118.0" style="-fx-border-color: royalblue;" text="Send" textFill="WHITE" />
+                <JFXTextArea layoutX="134.0" layoutY="94.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="0.00" unFocusColor="royalblue" />
+                <FontIcon iconColor="#b3ccff" iconLiteral="fas-times" iconSize="30" layoutX="14.0" layoutY="40.0" wrappingWidth="37.59994411468506" onMouseClicked="#closeethereumReceive"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="litecoinsendPane" layoutX="207.0" layoutY="78.0" prefHeight="374.0" prefWidth="571.0" style="-fx-background-color: black;">
+            <children>
+                <JFXTextArea layoutX="134.0" layoutY="39.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="Send to Litecoin Address" unFocusColor="lightgray" />
+                <JFXButton layoutX="232.0" layoutY="169.0" prefHeight="36.0" prefWidth="118.0" style="-fx-border-color: lightgray;" text="Send" textFill="WHITE" />
+                <JFXTextArea layoutX="134.0" layoutY="94.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="0.00" unFocusColor="lightgray" />
+                <FontIcon iconColor="#b3ccff" iconLiteral="fas-times" iconSize="30" layoutX="14.0" layoutY="40.0" wrappingWidth="37.59994411468506" onMouseClicked="#closelitecoinSend"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="litecoinreceivePane" layoutX="207.0" layoutY="78.0" prefHeight="374.0" prefWidth="571.0" style="-fx-background-color: black;">
+            <children>
+                <JFXTextArea layoutX="134.0" layoutY="39.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="Send to Litecoin Address" unFocusColor="lightgray" />
+                <JFXButton layoutX="232.0" layoutY="169.0" prefHeight="36.0" prefWidth="118.0" style="-fx-border-color: lightgray;" text="Send" textFill="WHITE" />
+                <JFXTextArea layoutX="134.0" layoutY="94.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="0.00" unFocusColor="lightgray" />
+                <FontIcon iconColor="#b3ccff" iconLiteral="fas-times" iconSize="30" layoutX="14.0" layoutY="40.0" wrappingWidth="37.59994411468506" onMouseClicked="#closelitecoinReceive"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="monerosendPane" layoutX="207.0" layoutY="78.0" prefHeight="374.0" prefWidth="571.0" style="-fx-background-color: black;">
+            <children>
+                <JFXTextArea layoutX="134.0" layoutY="39.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="Send to Monero Address" unFocusColor="lightgray" />
+                <JFXButton layoutX="232.0" layoutY="169.0" prefHeight="36.0" prefWidth="118.0" style="-fx-border-color:red;" text="Send" textFill="WHITE" />
+                <JFXTextArea layoutX="134.0" layoutY="94.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="0.00" unFocusColor="red" />
+                <FontIcon iconColor="#b3ccff" iconLiteral="fas-times" iconSize="30" layoutX="14.0" layoutY="40.0" wrappingWidth="37.59994411468506" onMouseClicked="#closemoneroSend"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="moneroreceivePane" layoutX="207.0" layoutY="78.0" prefHeight="374.0" prefWidth="571.0" style="-fx-background-color: black;">
+            <children>
+                <JFXTextArea layoutX="134.0" layoutY="39.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="Send to Monero Address" unFocusColor="lightgray" />
+                <JFXButton layoutX="232.0" layoutY="169.0" prefHeight="36.0" prefWidth="118.0" style="-fx-border-color: red;" text="Send" textFill="WHITE" />
+                <JFXTextArea layoutX="134.0" layoutY="94.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="386.0" promptText="0.00" unFocusColor="red" />
+                <FontIcon iconColor="#b3ccff" iconLiteral="fas-times" iconSize="30" layoutX="14.0" layoutY="40.0" wrappingWidth="37.59994411468506" onMouseClicked="#closemoneroReceive"/>
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>
